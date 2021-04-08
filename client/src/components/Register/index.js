@@ -11,21 +11,22 @@ export default function Register() {
         try {
           const data = await firebase.auth().createUserWithEmailAndPassword(email, password)
           console.log(data.user.uid)
-          console.log('USER CREATED')
+          console.log('User created')
         } catch (error) {
           console.log(error)
-          console.log("ERROR OCCURED")
+          console.log("Error Occured")
         }
     
       }
       return (
         <div>
+        <h1>Register</h1>    
         <label>
             email:
             <input type="text" name="name" value={email} onChange={(e)=> setEmail(e.target.value)}/>
           </label>
           <label>
-            email:
+            password:
             <input type="text" name="password" value={password} onChange={(e)=> setPassword(e.target.value)}/>
           </label>
         <button onClick={() => createUser(email, password)}>Click me</button> 
