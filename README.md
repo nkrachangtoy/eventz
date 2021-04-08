@@ -4,10 +4,9 @@ An app where users can post meetup events where the users can 'like', 'join'. Us
 
 
 
-
 ## Milestone 1
 
-* [ ] Authentication (Login/Register/Logout) with MongoDB(firebase?)
+* [ ] Authentication (Login/Register/Logout) with Firebase
 * [ ] Implement Event List Screen with static data
 * [ ] UI with basic styling(only for testing): 
     1. Login/Register Screen with Logout Button
@@ -33,7 +32,3 @@ An app where users can post meetup events where the users can 'like', 'join'. Us
 * [ ] Implement JWT for user Auth
     
 
-## Milestone 4
-
-* UI: 
-    
