@@ -4,34 +4,36 @@ import  firebase  from "./firebase/config"
 
 export default function App() {
 const [user, setUser] = useState(null)
+const [email, setEmail] = useState("email")
+const [password, setPassword] = useState("password")
 
+const createUser = async (email, password) => {
 
-useEffect(() => {
-  // const userRef = firebase.firestore().collection("users")
-  // console.log(userRef)
-}, [])
+  try {
+    const data = await firebase.auth().createUserWithEmailAndPassword(email, password)
+    console.log(data.user.uid)
+    console.log('USER CREATED')
+  } catch (error) {
+    console.log(error)
+    console.log("ERROR OCCURED")
+  }
 
-const createUser = async () => {
-
-
-
-  
 }
-
-
 
 return (
 
-  <form>
-  <label>
-    Name:
-    <input type="text" name="name" />
+<div>
+
+ <label>
+    email:
+    <input type="text" name="name" value={email} onChange={(e)=> setEmail(e.target.value)}/>
   </label>
-  <input type="submit" value="Submit" />
-</form>
-
-
-
+  <label>
+    email:
+    <input type="text" name="password" value={password} onChange={(e)=> setPassword(e.target.value)}/>
+  </label>
+<button onClick={() => createUser(email, password)}>Click me</button> 
+</div>
 )
 
 

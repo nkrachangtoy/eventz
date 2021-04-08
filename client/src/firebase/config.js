@@ -22,4 +22,4 @@ const firebaseConfig = {
   }
   
   
-  export default { firebase }
+  export default firebase
