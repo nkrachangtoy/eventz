@@ -16,19 +16,29 @@ An app where users can post meetup events where the users can 'like', 'join'. Us
 
 
 ## Milestone 2
-* [ ] Create Read/Create Post for event
-* [ ] Consume Event API through back-end
-* [ ] Implement function( onClose, buttonClicked)
+* [ ] Read/Create Post for event (postman)
+* [ ] Replace static data with dynamic data
+* [ ] Implement function UI to create and read post (storybook?)
 * [ ] Implement Navigation & Layouts
 
 * UI: 
     * [ ] Style all pages
-
-
+    * [ ] 
 
 ## Milestone 3
+* [ ] Create Update/Delete function for events
+* [ ] Implement functions (deleteButton, editPage)
+* [ ] Create Join event functionality
 
+
+## Milestone 4
+* [ ] JWT Tokens
+* [ ] Create Follow functionality
+* [ ] 
+
+## Milestone 5
 * [ ] Deploy front-end/back-end (heroku?)
-* [ ] Implement JWT for user Auth
+
     
+
 
