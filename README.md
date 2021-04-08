@@ -1,4 +1,4 @@
-# Passion Project
+# Eventz
 
 An app where users can post meetup events where the users can 'like', 'join'. Users will make post events with an image of the location on google maps and a description of the event that users can join
 
