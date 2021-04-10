@@ -2,8 +2,6 @@ import React from 'react'
 import  firebase  from "../../firebase/config"
 
 
-
-
 export default function Header() {
 
     const logout = async () => {
@@ -14,9 +12,6 @@ export default function Header() {
             alert(e)
         }
     }
-
-
-
 
     return (
         <div>
