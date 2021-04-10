@@ -2,6 +2,7 @@
 const express = require('express')
 const {connectDB} = require('./utils/db')
 const dotenv = require('dotenv')
+const decodeIDToken = require('./utils/firebaseToken')
 
 // dotenv config
 dotenv.config()
@@ -11,6 +12,9 @@ const app = express()
 
 // Connect to mongodb
 connectDB()
+
+// Firebase middleware
+app.use(decodeIDToken)
 
 // Middlewares
 app.use(express.json)
