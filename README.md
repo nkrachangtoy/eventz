@@ -27,7 +27,6 @@ An app where users can post meetup events where the users can 'like', 'join'. Us
 
 - UI:
   - [ ] Style all pages
-  - [ ]
 
 ## Milestone 3
 
@@ -39,7 +38,6 @@ An app where users can post meetup events where the users can 'like', 'join'. Us
 
 - [ ] JWT Tokens
 - [ ] Create Follow functionality
-- [ ]
 
 ## Milestone 5
 
