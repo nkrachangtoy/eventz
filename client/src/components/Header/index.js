@@ -1,5 +1,8 @@
 import React from 'react'
 import  firebase  from "../../firebase/config"
+// import Button from 'react-bootstrap/Button';
+import {Button, Navbar, Nav, Form, FormControl} from 'react-bootstrap'
+
 
 
 export default function Header() {
@@ -14,18 +17,17 @@ export default function Header() {
     }
 
     return (
-        <div>
-            <ul>
-                <li><a href="default.asp">Home</a></li>
-                {/* <li><a href="news.asp">News</a></li>
-                <li><a href="contact.asp">Contact</a></li> */}
-                <li>
-                    <a href="about.asp"><button onClick={() => logout()}>Logout</button></a>
-                </li>
-            </ul>
-        </div>
-
-
-        
+        <>
+        <Navbar bg="light" variant="light">
+            <Navbar.Brand href="#home">Eventz</Navbar.Brand>
+            <Nav className="mr-auto">
+            <Nav.Link >Home</Nav.Link>
+            </Nav>
+            <Form inline>
+            {/* <FormControl type="text" placeholder="Search" className="mr-sm-2" /> */}
+            <Button variant="outline-primary" onClick={() => logout()}>Logout</Button>
+            </Form>
+        </Navbar>
+        </>
     )
 }
