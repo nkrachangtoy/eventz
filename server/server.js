@@ -12,6 +12,10 @@ const app = express()
 // Connect to mongodb
 connectDB()
 
+// Middlewares
+app.use(express.json)
+app.use(express.urlencoded({extended: true}))
+
 // Routes
 
 // Test
