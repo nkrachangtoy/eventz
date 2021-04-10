@@ -6,17 +6,7 @@ export default function EventDetails() {
     
     return (
         <div>
-            <ul>
-                <li><a href="default.asp">Event Details</a></li>
-                {/* <li><a href="news.asp">News</a></li>
-                <li><a href="contact.asp">Contact</a></li> */}
-                <li>
-                    <a href="about.asp">Event Details</a>
-                </li>
-            </ul>
-        </div>
-
-
-        
+            <h1>Event Details Page</h1>
+        </div>     
     )
 }
