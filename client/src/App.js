@@ -8,6 +8,10 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import NewEvents from "./components/NewEvent";
+import NewEvent from "./components/NewEvent";
+import Events from "./components/Events";
+import EventDetails from "./components/EventDetails";
 // import  firebase  from "./firebase/config"
 
 
@@ -17,7 +21,7 @@ const [user, setUser] = useState(null)
 
   return (
   <Router>
-    <HeaderNavigation></HeaderNavigation>
+    <Header></Header>
     <main style={{marginTop: 100}}>
     <Switch>
       <Route path="/login">
@@ -26,17 +30,17 @@ const [user, setUser] = useState(null)
       <Route path="/register">
         <Register></Register>
       </Route>
-      {/* <Route path="/profile">
-        <p>Profile Page</p>
+      <Route path="/newEvent">
+        <NewEvent></NewEvent>
       </Route>
-      <Route path="/newPost">
-        <p>Create New Post Page</p>
+      <Route path="/events">
+        <Events></Events>
       </Route>
-      <Route path="/posts/:postId">
-        <PostDetailsPage></PostDetailsPage>
-      </Route> */}
+      <Route path="/events/:eventsId">
+        <EventDetails></EventDetails>
+      </Route>
       <Route path="/">
-        
+        <Events></Events>
       </Route>
     </Switch>
     </main>
