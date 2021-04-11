@@ -2,7 +2,10 @@
 const express = require('express')
 const {connectDB} = require('./utils/db')
 const dotenv = require('dotenv')
+
+//Defining database & router
 const database = require('./fakeDatabase')
+const makeEventsRouter = require('./routers/eventsRouter')
 
 // dotenv config
 dotenv.config()
@@ -19,7 +22,10 @@ app.use("/api/events", eventsRouter)
 
 // Test
 app.get('/', (req, res) => {
-    res.send("It's working 🤗")
+  const test = database.allEvents()
+    res.send({
+      test
+    })
   }) 
 
 

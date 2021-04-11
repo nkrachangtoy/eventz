@@ -7,7 +7,7 @@ module.exports = function({database}) {
   router.get("/",async (req, res) => {
     const events = await database.allEvents()
     res.send({
-      events
+      message: "It's working"
     })
   }) 
   
