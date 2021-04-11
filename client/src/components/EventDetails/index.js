@@ -29,18 +29,12 @@ export default function EventDetails() {
         <>
         <Card className={classes.root}>
         <CardActionArea>
-          {/* <CardMedia
-            className={classes.media}
-            image="/static/images/cards/contemplative-reptile.jpg"
-            title="Contemplative Reptile"
-          /> */}
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
               Event Description
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-              across all continents except Antarctica
+              A place where React Developpers can meet and share ideas.
             </Typography>
           </CardContent>
         </CardActionArea>
@@ -52,6 +46,23 @@ export default function EventDetails() {
             Learn More
           </Button>
         </CardActions>
+      </Card>
+      <Card className={classes.root}>
+        <CardActionArea>
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              Location
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              THE PINT VANCOUVER, BC
+            </Typography>
+            <CardMedia
+            className={classes.media}
+            image="/static/images/cards/contemplative-reptile.jpg"
+            title="Contemplative Reptile"
+          />
+          </CardContent>
+        </CardActionArea>
       </Card>
         </>
     )
