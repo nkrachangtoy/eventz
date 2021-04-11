@@ -2,7 +2,7 @@
 const express = require('express')
 const {connectDB} = require('./utils/db')
 const dotenv = require('dotenv')
-const database = require('././fakeDatabase')
+const database = require('./fakeDatabase')
 
 // dotenv config
 dotenv.config()

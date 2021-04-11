@@ -35,11 +35,46 @@ const users = [
           }
       }
   ]
+  const events = [
+    [
+        {
+          "_id": "1",
+          "Event": 'React Vancouver',
+          "Detail": 'Meetup for React Devs',
+          "Location": 'Downtown',
+          "Date": '2021-04-10',
+          "Time": '18:00',
+          "Host": 'Jonathan',
+          "Status": 'Open'
+        },
+        {
+            "_id": "2",
+            "Event": 'React Vancouver',
+            "Detail": 'Meetup for React Devs',
+            "Location": 'Downtown',
+            "Date": '2021-04-10',
+            "Time": '18:00',
+            "Host": 'Jonathan',
+            "Status": 'Open'
+          },
+          {
+            "_id": "3",
+            "Event": 'React Vancouver',
+            "Detail": 'Meetup for React Devs',
+            "Location": 'Downtown',
+            "Date": '2021-04-10',
+            "Time": '18:00',
+            "Host": 'Jonathan',
+            "Status": 'Open'
+          },
+]
+  ]
+
   
-  async function allPosts() {
-    return posts
+  async function allEvents() {
+    return events
   }
-   exports.allPosts = allPosts
+   exports.allEvents = allEvents
   
 
   async function createPost({postDetails, user}) {
