@@ -4,12 +4,12 @@ module.exports = function({database}) {
   const router = express.Router()
 
 
-  router.get("/",async (req, res) => {
+  router.get('/', async (req, res) => {
     const events = await database.allEvents()
-    res.send({
-      message: "It's working"
-    })
-  }) 
+      res.send({
+        events
+      })
+    }) 
   
 //   router.post("/", async (req,res) =>{
   
