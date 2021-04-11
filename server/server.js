@@ -5,7 +5,7 @@ const dotenv = require('dotenv')
 
 //Defining database & router
 const database = require('./fakeDatabase')
-const makeEventsRouter = require('./routers/eventsRouter')
+// const makeEventsRouter = require('./routers/eventsRouter')
 
 // dotenv config
 dotenv.config()
@@ -17,14 +17,17 @@ const app = express()
 connectDB()
 
 // Routes
-const eventsRouter = makeEventsRouter({database})
-app.use("/api/events", eventsRouter)
+// const eventsRouter = makeEventsRouter({database})
+// app.use("/api/events", eventsRouter)
+
+console.log(database.allEvents())
+
 
 // Test
-app.get('/', (req, res) => {
-  const test = database.allEvents()
+app.get('/', async (req, res) => {
+  const events = await database.allEvents({database})
     res.send({
-      test
+      events
     })
   }) 
 
