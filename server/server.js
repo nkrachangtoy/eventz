@@ -2,6 +2,7 @@
 const express = require('express')
 const {connectDB} = require('./utils/db')
 const dotenv = require('dotenv')
+const database = require('././fakeDatabase')
 
 // dotenv config
 dotenv.config()
@@ -13,6 +14,8 @@ const app = express()
 connectDB()
 
 // Routes
+const eventsRouter = makeEventsRouter({database})
+app.use("/api/events", eventsRouter)
 
 // Test
 app.get('/', (req, res) => {
