@@ -19,6 +19,10 @@ import {
       media: {
         height: 140,
       },
+      card: {
+          paddingTop: 100,
+          marginTop: 100
+      }
 }))
 
 
@@ -27,43 +31,22 @@ export default function EventDetails() {
     const classes = useStyles();
     return (
         <>
-        <Card className={classes.root}>
-        <CardActionArea>
-          <CardContent>
+            <div classes={classes.card}>
             <Typography gutterBottom variant="h5" component="h2">
               Event Description
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
               A place where React Developpers can meet and share ideas.
             </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          <Button size="small" color="primary">
-            Share
-          </Button>
-          <Button size="small" color="primary">
-            Learn More
-          </Button>
-        </CardActions>
-      </Card>
-      <Card className={classes.root}>
-        <CardActionArea>
-          <CardContent>
+            </div>
+            <div>
             <Typography gutterBottom variant="h5" component="h2">
               Location
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
               THE PINT VANCOUVER, BC
             </Typography>
-            <CardMedia
-            className={classes.media}
-            image="/static/images/cards/contemplative-reptile.jpg"
-            title="Contemplative Reptile"
-          />
-          </CardContent>
-        </CardActionArea>
-      </Card>
+            </div>     
         </>
     )
 }
