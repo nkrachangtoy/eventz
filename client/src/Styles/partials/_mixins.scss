@@ -1,0 +1,16 @@
+// FONT MIXINS //
+@mixin header($font-size, $line-height) {
+  font-family: "TitilliumWeb-Bold";
+  font-size: $font-size;
+  line-height: $line-height;
+}
+@mixin subheader($font-size, $line-height) {
+  font-family: "TitilliumWeb-Semi";
+  font-size: $font-size;
+  line-height: $line-height;
+}
+@mixin text($font-size, $line-height) {
+  font-family: "TitilliumWeb-Regular";
+  font-size: $font-size;
+  line-height: $line-height;
+}
