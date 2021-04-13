@@ -33,6 +33,7 @@
   }
   &__button {
     @include loginBtn;
+    margin-bottom: 10px;
   }
   &__text {
     @include text(14px, 14px);
