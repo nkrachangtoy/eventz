@@ -2,6 +2,7 @@
 const express = require('express')
 const {connectDB} = require('./utils/db')
 const dotenv = require('dotenv')
+const decodeIDToken = require('./utils/firebaseToken')
 
 //Defining database & router
 const database = require('./fakeDatabase')
@@ -15,6 +16,13 @@ const app = express()
 
 // Connect to mongodb
 connectDB()
+
+// Firebase middleware
+app.use(decodeIDToken)
+
+// Middlewares
+app.use(express.json)
+app.use(express.urlencoded({extended: true}))
 
 // Routes
 const eventsRouter = makeEventsRouter({database})

@@ -1,0 +1,49 @@
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 376px;
+}
+
+.login-header-wrapper {
+  @include flex-column;
+  margin-bottom: 40px;
+}
+
+.login-text {
+  &__header {
+    @include header(36px, 39px);
+    color: $black;
+    margin-bottom: 15px;
+  }
+  &__subheader {
+    @include subheader(16px, 18px);
+    color: $grey;
+  }
+}
+
+.login-form {
+  @include flex-column;
+  &__label {
+    @include text(14px, 14px);
+    color: $grey;
+  }
+  &__input {
+    @include input-box;
+  }
+  &__button {
+    @include loginBtn;
+    margin-bottom: 10px;
+  }
+  &__text {
+    @include text(14px, 14px);
+    &--forgot-password {
+      color: $blue;
+    }
+  }
+  &__radio-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

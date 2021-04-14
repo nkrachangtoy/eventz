@@ -1,2 +1,6 @@
 // MongoDb
 URI=<connection_string>
+
+// Google_application_credentials
+GOOGLE_APPLICATION_CREDENTIALS="<PATH_TO_YOUR_SERVICE_ACCOUNT_JSON>"
+DATABASE_NAME=<YOUR_DATABASE_NAME>
