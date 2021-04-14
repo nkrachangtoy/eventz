@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useContext } from "react"
+import React, { useState } from "react"
+import {Link} from 'react-router-dom'
 import  firebase  from "../../firebase/config"
 
 
@@ -19,17 +20,47 @@ export default function Login() {
     
       }
       return (
-        <div>
-            <h1>Login</h1>
-        <label>
-            email:
-            <input type="text" name="name" value={email} onChange={(e)=> setEmail(e.target.value)}/>
-          </label>
-          <label>
-            password:
-            <input type="text" name="password" value={password} onChange={(e)=> setPassword(e.target.value)}/>
-          </label>
-        <button onClick={() => loginUser(email, password)}>Click me</button> 
+        <div className="login-wrapper">
+          <div className="login-header-wrapper">
+            <span className="login-text__header">Log In</span>
+            <span className="login-text__subheader">Welcome, we missed you!</span>
+          </div>
+          <form className="login-form">
+            <label className="login-form__label" for="email">
+              Email
+            </label>
+              <input 
+                className="login-form__input"
+                type="text" 
+                name="email" 
+                value={email} 
+                onChange={(e)=> setEmail(e.target.value)}
+              />
+            <label className="login-form__label" for="password">
+              Password
+            </label>
+              <input 
+                className="login-form__input" 
+                type="text" 
+                name="password" 
+                value={password} 
+                onChange={(e)=> setPassword(e.target.value)}
+              />
+              <div className="login-form__radio-wrapper">
+                <div>
+                  <input type="radio" value="Remember me" name="Remember me"/>
+                  <label className="login-form__label" for="Remember me">Remember me</label>
+                </div>
+                <Link>
+                  <span className="login-form__text--forget-password">Forgot Password?</span>            
+                </Link>
+              </div>
+            <button className="login-form__button" onClick={() => loginUser(email, password)}>Log in</button> 
+          </form>
+          <div>
+            <span>Not a member?</span>
+            <span>Signup here →</span>
+          </div>
         </div>
       )
 }

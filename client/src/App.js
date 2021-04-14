@@ -1,19 +1,17 @@
-import React, { useState, useEffect, useContext } from "react"
+import React, { useState } from "react"
 import Header from "./components/Header"
+import {BrowserRouter as Router, Switch, Route,} from "react-router-dom";
+// import  firebase  from "./firebase/config"
+
+// IMPORT COMPONENTS
 import Login from "./components/Login"
 import Register from "./components/Register"
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import NewEvents from "./components/NewEvent";
 import NewEvent from "./components/NewEvent";
 import Events from "./components/Events";
 import EventDetails from "./components/EventDetails";
-// import  firebase  from "./firebase/config"
 
+// Style
+import './Styles/main.css'
 
 export default function App() {
 const [user, setUser] = useState(null)
