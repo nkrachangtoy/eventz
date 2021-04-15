@@ -62,7 +62,11 @@ export default function EventDetails() {
             </Paper>
           </Grid>
           <Grid item xs={4}>
-            <Paper className={classes.paper}>item</Paper>
+            <Paper className={classes.paper}>
+            <Typography>TIME</Typography>
+            <Typography>2HR</Typography>
+            <Typography>12:00PM-2:00PM</Typography>
+            </Paper>
           </Grid>
         </React.Fragment>
       );
