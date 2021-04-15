@@ -19,7 +19,7 @@ const [user, setUser] = useState(null)
 
 
   return (
-  <Container class="bg-secondary">
+  <Container class="bg-secondary" maxWidth="lg" maxHeight="300">
   <Router class="bg-dark">
     <Header class="bg-dark"></Header>
     <main style={{marginTop: 100}}>

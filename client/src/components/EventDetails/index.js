@@ -56,16 +56,16 @@ export default function EventDetails() {
       return (
         <React.Fragment>
           <Grid item xs={4}>
-            <Typography gutterBottom variant="h5" component="h2">
+            <Typography gutterBottom variant="h5" component="h2" className="text-white">
               Event Description
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography>
               A place where React Developpers can meet and share ideas.
             </Typography>
 
           </Grid>
           <Grid item xs={4}>
-            <Typography class="text-white" >TIME</Typography>
+            <Typography gutterBottom variant="h5" component="h2" className="text-white">Time</Typography>
             <Typography>2HR</Typography>
             <Typography>12:00PM-2:00PM</Typography>
           </Grid>
@@ -78,17 +78,14 @@ export default function EventDetails() {
       return (
         <React.Fragment>
           <Grid item xs={4}>
-            <Paper className={classes.paper}>
-            <Typography gutterBottom variant="h5" component="h2">
+            <Typography gutterBottom variant="h5" component="h2" className="text-white">
               Location
             </Typography>
             <Typography>The PINT VANCOUVER BC</Typography>
             <Typography>Google Maps Image</Typography>
-            </Paper>
           </Grid>
           <Grid item xs={4}>
-            <Paper className={classes.paper}>
-              <Typography>ATTENDEES</Typography>
+            <Typography gutterBottom variant="h5" component="h2" className="text-white">Attendees</Typography>
               <span>
               <div className={classes.avatarRoot}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
@@ -96,7 +93,6 @@ export default function EventDetails() {
                 <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
               </div>
               </span>
-            </Paper>
           </Grid>
         </React.Fragment>
       );
