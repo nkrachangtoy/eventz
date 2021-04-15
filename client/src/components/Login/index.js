@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 import  firebase  from "../../firebase/config"
 
 
@@ -7,12 +7,14 @@ export default function Login() {
     const [user, setUser] = useState(null)
     const [email, setEmail] = useState("email")
     const [password, setPassword] = useState("password")
+    const history = useHistory
     
     const loginUser = async (email, password) => {
         try {
           const data = await firebase.auth().signInWithEmailAndPassword(email, password)
           console.log('user logged in')
           console.log(data.user.uid)
+          history.push("/events")
         } catch (error) {
           console.log(error)
           console.log("error occured")

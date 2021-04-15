@@ -38,7 +38,7 @@ const [user, setUser] = useState(null)
         <EventDetails></EventDetails>
       </Route>
       <Route path="/">
-        <Events></Events>
+        <LoginPage></LoginPage>
       </Route>
     </Switch>
     </main>
