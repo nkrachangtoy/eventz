@@ -55,7 +55,6 @@ export default function EventDetails() {
     function FormRow1() {
       return (
         <React.Fragment>
-          <Container></Container>
           <Grid item xs={4}>
             <Paper className={classes.paper}>
             <Typography gutterBottom variant="h5" component="h2">
@@ -111,23 +110,14 @@ export default function EventDetails() {
 
     return (
         <>
-      <Grid container spacing={1}>
-        <Grid container item xs={12} spacing={3}>
-          <FormRow1 />
+        <Grid container spacing={1}>
+          <Grid container item xs={12} spacing={3}>
+            <FormRow1 />
+          </Grid>
+          <Grid container item xs={12} spacing={3}>
+            <FormRow2 />  
+          </Grid>
         </Grid>
-        <Grid container item xs={12} spacing={3}>
-          <FormRow2 />
-        </Grid>
-      </Grid>
-
-
-
-
-
-
-
-
-
         </>
     )
 }
