@@ -7,7 +7,7 @@ const Event = require('../models/event')
  */
 module.exports.getAllEvent = async (req,res) => {
     try{
-        const events = await Event.find()
+      const events = await Event.find()
       res.json(events)
     }catch(err){
       res.json({message: err})
@@ -27,13 +27,11 @@ module.exports.getAllEvent = async (req,res) => {
       description,
       location,
       time,
-      createdDate,
     })
     try{
       // Save new Event to database
       const saveEvent = await event.save()
       res.json(saveEvent)
-      res.send(`Event has been created!`)
   }catch(err){
     res.json({message: err})
   }

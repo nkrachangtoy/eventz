@@ -25,12 +25,12 @@ connectDB()
 app.use(decodeIDToken)
 
 // Middlewares
-app.use(express.json)
+app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
 // Routes
 app.get('/', (req,res)=>{
-  res.send('We are on home')
+  res.send('Hello from express')
 })
 app.use('/events', eventsRoute)
 
