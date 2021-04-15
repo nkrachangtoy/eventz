@@ -19,8 +19,9 @@ li {
 }
 // UTILITY CLASS //
 .container {
-  margin: 0 auto;
-  max-width: $desktop-width;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-content-wrapper {
