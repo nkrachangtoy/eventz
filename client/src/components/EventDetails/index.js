@@ -17,11 +17,7 @@ import {
     Select,
     Checkbox,
     DatePicker,
-    Form
   } from "@material-ui/core";
-
-
-
 
 
   const useStyles = makeStyles((theme)=>({
@@ -44,40 +40,72 @@ import {
 
 export default function EventDetails() {
     const classes = useStyles()
-    const handleSubmit = async() => {
 
-
-
-
+    function FormRow() {
+      return (
+        <React.Fragment>
+          <Grid item xs={4}>
+            <Paper className={classes.paper}>item</Paper>
+          </Grid>
+          <Grid item xs={4}>
+            <Paper className={classes.paper}>item</Paper>
+          </Grid>
+        </React.Fragment>
+      );
     }
+
+
+
+
+
 
     return (
         <>
-          <Form>
+      <Grid container spacing={1}>
+        <Grid container item xs={12} spacing={3}>
+          <FormRow />
+        </Grid>
+        <Grid container item xs={12} spacing={3}>
+          <FormRow />
+        </Grid>
+      </Grid>
 
 
 
 
 
 
-          </Form>
 
-            {/* <div classes={classes.card}>
-            <Typography gutterBottom variant="h5" component="h2">
-              Event Description
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              A place where React Developpers can meet and share ideas.
-            </Typography>
-            </div>
-            <div>
-            <Typography gutterBottom variant="h5" component="h2">
-              Location
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              THE PINT VANCOUVER, BC
-            </Typography>
-            </div>      */}
+
+
         </>
     )
 }
+
+
+
+
+
+
+
+
+
+
+
+
+{/* <div classes={classes.card}>
+<Typography gutterBottom variant="h5" component="h2">
+  Event Description
+</Typography>
+<Typography variant="body2" color="textSecondary" component="p">
+  A place where React Developpers can meet and share ideas.
+</Typography>
+</div>
+<div>
+<Typography gutterBottom variant="h5" component="h2">
+  Location
+</Typography>
+<Typography variant="body2" color="textSecondary" component="p">
+  THE PINT VANCOUVER, BC
+</Typography>
+</div>      */}
