@@ -13,10 +13,9 @@ export default function Login() {
         try {
           const data = await firebase.auth().signInWithEmailAndPassword(email, password)
           console.log('user logged in')
+          history.push("/events")
           console.log(data.user.uid)
-          history.push("/events")
         } catch (error) {
-          history.push("/events")
           console.log(error)
           console.log("error occured")
         }
