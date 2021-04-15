@@ -34,7 +34,7 @@ const [user, setUser] = useState(null)
       <Route path="/events">
         <Events></Events>
       </Route>
-      <Route path="/events/:eventsId">
+      <Route path="/eventDetails">
         <EventDetails></EventDetails>
       </Route>
       <Route path="/">
