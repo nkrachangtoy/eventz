@@ -56,7 +56,6 @@ export default function EventDetails() {
       return (
         <React.Fragment>
           <Grid item xs={4}>
-            <Paper className={classes.paper}>
             <Typography gutterBottom variant="h5" component="h2">
               Event Description
             </Typography>
@@ -64,14 +63,11 @@ export default function EventDetails() {
               A place where React Developpers can meet and share ideas.
             </Typography>
 
-            </Paper>
           </Grid>
           <Grid item xs={4}>
-            <Paper className={classes.paper}>
-            <Typography class="text-white bg-dark" >TIME</Typography>
+            <Typography class="text-white" >TIME</Typography>
             <Typography>2HR</Typography>
             <Typography>12:00PM-2:00PM</Typography>
-            </Paper>
           </Grid>
         </React.Fragment>
       );

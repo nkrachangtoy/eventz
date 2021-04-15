@@ -12,14 +12,16 @@ import EventDetails from "./components/EventDetails";
 
 // Style
 import './Styles/main.css'
+import { Container } from "@material-ui/core";
 
 export default function App() {
 const [user, setUser] = useState(null)
 
 
   return (
-  <Router>
-    <Header></Header>
+  <Container class="bg-secondary">
+  <Router class="bg-dark">
+    <Header class="bg-dark"></Header>
     <main style={{marginTop: 100}}>
     <Switch>
       <Route path="/login">
@@ -43,6 +45,7 @@ const [user, setUser] = useState(null)
     </Switch>
     </main>
   </Router>
+  </Container>
   )
   }
 
