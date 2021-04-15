@@ -1,5 +1,6 @@
 const express = require('express')
 
+
 module.exports = function({database}) {
   const router = express.Router()
 
@@ -10,6 +11,8 @@ module.exports = function({database}) {
         events
       })
     }) 
+
+
   
 //   router.post("/", async (req,res) =>{
   

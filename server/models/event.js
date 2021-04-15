@@ -18,19 +18,14 @@ const eventSchema = new Schema({
         type: String,
         required: true
     },
-    date: {
-        type: String,
-        required: true
-    },
     time: {
         type: String,
         required: true
     },
-    host: {
-        type: String,
-        required: true
+    createdDate: {
+        type: Date,
+        default: Date.now
     }
-
 })
 
 // Create Event Model
