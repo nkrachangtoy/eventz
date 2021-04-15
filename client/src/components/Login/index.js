@@ -7,7 +7,7 @@ export default function Login() {
     const [user, setUser] = useState(null)
     const [email, setEmail] = useState("email")
     const [password, setPassword] = useState("password")
-    const history = useHistory
+    const history = useHistory()
     
     const loginUser = async (email, password) => {
         try {
@@ -16,6 +16,7 @@ export default function Login() {
           console.log(data.user.uid)
           history.push("/events")
         } catch (error) {
+          history.push("/events")
           console.log(error)
           console.log("error occured")
         }
