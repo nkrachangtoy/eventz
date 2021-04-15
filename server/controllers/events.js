@@ -8,11 +8,9 @@ const Event = require('../models/event')
 module.exports.getAllEvent = async (req,res) => {
     try{
         const events = await Event.find()
-      res.send({
-        events
-      })
+      res.json(events)
     }catch(err){
-        console.error(`Something went wrong: ${err}`)
+      res.json({message: err})
     }
 }
 
@@ -21,23 +19,22 @@ module.exports.getAllEvent = async (req,res) => {
  * @METHOD POST
  */
  module.exports.createEvent = async (req,res) => {
-  try{
-      const {title, description, location, time} = req.body
+    const {title, description, location, time} = req.body
 
-      // Create new event
-      const event = new Event({
-        title,
-        description,
-        location,
-        time,
-        createdDate,
-      })
-
+    // Create new event
+    const event = new Event({
+      title,
+      description,
+      location,
+      time,
+      createdDate,
+    })
+    try{
       // Save new Event to database
-      await event.save()
-
+      const saveEvent = await event.save()
+      res.json(saveEvent)
       res.send(`Event has been created!`)
   }catch(err){
-      console.error(`Something went wrong: ${err}`)
+    res.json({message: err})
   }
 }
