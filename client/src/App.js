@@ -4,8 +4,8 @@ import {BrowserRouter as Router, Switch, Route,} from "react-router-dom";
 // import  firebase  from "./firebase/config"
 
 // IMPORT COMPONENTS
-import Login from "./components/Login"
-import Register from "./components/Register"
+import LoginPage from './layouts/LoginPage'
+import RegisterPage from "./layouts/RegisterPage"
 import NewEvent from "./components/NewEvent";
 import Events from "./components/Events";
 import EventDetails from "./components/EventDetails";
@@ -23,10 +23,10 @@ const [user, setUser] = useState(null)
     <main style={{marginTop: 100}}>
     <Switch>
       <Route path="/login">
-        <Login></Login>
+        <LoginPage></LoginPage>
       </Route>
       <Route path="/register">
-        <Register></Register>
+        <RegisterPage></RegisterPage>
       </Route>
       <Route path="/newEvent">
         <NewEvent></NewEvent>
