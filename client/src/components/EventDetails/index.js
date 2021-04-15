@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react"
 import  firebase  from "../../firebase/config"
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid } from '@material-ui/core';
+import { Avatar, Grid, Paper } from '@material-ui/core';
 import { Form, Field } from 'react-final-form';
 import {
     Card,
@@ -24,6 +24,12 @@ import {
     root: {
         maxWidth: 345,
       },
+    avatarRoot: {
+      display: 'flex',
+      '& > *': {
+        margin: theme.spacing(1),
+        },
+      },
       media: {
         height: 140,
       },
@@ -41,11 +47,19 @@ import {
 export default function EventDetails() {
     const classes = useStyles()
 
-    function FormRow() {
+    function FormRow1() {
       return (
         <React.Fragment>
           <Grid item xs={4}>
-            <Paper className={classes.paper}>item</Paper>
+            <Paper className={classes.paper}>
+            <Typography gutterBottom variant="h5" component="h2">
+              Event Description
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              A place where React Developpers can meet and share ideas.
+            </Typography>
+
+            </Paper>
           </Grid>
           <Grid item xs={4}>
             <Paper className={classes.paper}>item</Paper>
@@ -55,7 +69,33 @@ export default function EventDetails() {
     }
 
 
-
+    function FormRow2() {
+      return (
+        <React.Fragment>
+          <Grid item xs={4}>
+            <Paper className={classes.paper}>
+            <Typography gutterBottom variant="h5" component="h2">
+              Location
+            </Typography>
+            <Typography>The PINT VANCOUVER BC</Typography>
+            <Typography>Google Maps Image</Typography>
+            </Paper>
+          </Grid>
+          <Grid item xs={4}>
+            <Paper className={classes.paper}>
+              <Typography>ATTENDEES</Typography>
+              <span>
+              <div className={classes.avatarRoot}>
+                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+              </div>
+              </span>
+            </Paper>
+          </Grid>
+        </React.Fragment>
+      );
+    }
 
 
 
@@ -63,10 +103,10 @@ export default function EventDetails() {
         <>
       <Grid container spacing={1}>
         <Grid container item xs={12} spacing={3}>
-          <FormRow />
+          <FormRow1 />
         </Grid>
         <Grid container item xs={12} spacing={3}>
-          <FormRow />
+          <FormRow2 />
         </Grid>
       </Grid>
 
