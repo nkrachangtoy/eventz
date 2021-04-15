@@ -2,11 +2,11 @@
 const express = require('express')
 const {connectDB} = require('./utils/db')
 const dotenv = require('dotenv')
+const cors = require('cors')
 const decodeIDToken = require('./utils/firebaseToken')
 
 //Defining database & router
-const database = require('./fakeDatabase')
-const makeEventsRouter = require('./routers/eventsRouter')
+const eventsRoute = require('./routes/eventsRoute')
 
 // dotenv config
 dotenv.config()
@@ -14,10 +14,14 @@ dotenv.config()
 // Express app
 const app = express()
 
+// CORS
+app.use(cors())
+
 // Connect to mongodb
 connectDB()
 
 // Firebase middleware
+// Will enable when dealing with auth
 app.use(decodeIDToken)
 
 // Middlewares
@@ -25,26 +29,11 @@ app.use(express.json)
 app.use(express.urlencoded({extended: true}))
 
 // Routes
-const eventsRouter = makeEventsRouter({database})
-app.use("/api/events", eventsRouter)
+app.get('/', (req,res)=>{
+  res.send('We are on home')
+})
+app.use('/events', eventsRoute)
 
-console.log(database.allEvents())
-
-
-// Test
-app.get('/', async (req, res) => {
-  
-    res.send({
-      message: "It's working"
-    })
-  }) 
-
-  // app.get('/events', async (req, res) => {
-  //   const events = await database.allEvents()
-  //     res.send({
-  //       events
-  //     })
-  //   }) 
 
 // Listen
 const port = process.env.PORT || 8080
