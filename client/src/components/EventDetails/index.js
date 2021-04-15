@@ -17,7 +17,9 @@ import {
     Select,
     Checkbox,
     DatePicker,
+    Container
   } from "@material-ui/core";
+import { blue, blueGrey } from "@material-ui/core/colors";
 
 
   const useStyles = makeStyles((theme)=>({
@@ -36,6 +38,9 @@ import {
       card: {
           paddingTop: 100,
           marginTop: 100
+      },
+      heading: {
+        color: blueGrey
       }
 }))
 
@@ -50,6 +55,7 @@ export default function EventDetails() {
     function FormRow1() {
       return (
         <React.Fragment>
+          <Container></Container>
           <Grid item xs={4}>
             <Paper className={classes.paper}>
             <Typography gutterBottom variant="h5" component="h2">
@@ -63,7 +69,7 @@ export default function EventDetails() {
           </Grid>
           <Grid item xs={4}>
             <Paper className={classes.paper}>
-            <Typography>TIME</Typography>
+            <Typography class="text-white bg-dark" >TIME</Typography>
             <Typography>2HR</Typography>
             <Typography>12:00PM-2:00PM</Typography>
             </Paper>
