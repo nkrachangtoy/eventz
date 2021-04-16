@@ -1,5 +1,6 @@
 // Require
 const mongoose = require('mongoose')
+const User = require('./user')
 
 // Get the Schema constructor
 const Schema = mongoose.Schema
@@ -25,6 +26,10 @@ const eventSchema = new Schema({
     createdDate: {
         type: Date,
         default: Date.now
+    },
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
     }
 })
 

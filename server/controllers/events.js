@@ -36,3 +36,30 @@ module.exports.getAllEvent = async (req,res) => {
     res.json({message: err})
   }
 }
+
+// /**
+//  * Edit an event
+//  * @METHOD PATCH
+//  */
+//  module.exports.createEvent = async (req,res) => {
+
+//   const { eventId } = req.params
+//   const user = await req.decodedUser
+//   const userId = user._id
+
+//   try{
+//     const event = await Event.findById(eventId)
+
+//     // Check if user is the author of the event
+//     if(!event.author._id.equals(userId)){
+//       res.send({Message: "You are not authorized to edit this event!"})
+//       return
+//     }
+
+//     await Event.findByIdAndUpdate(event._id, req.body)
+
+//     res.send({message: 'Successfully updated event!'})
+// }catch(err){
+//   res.json({message: err})
+// }
+// }

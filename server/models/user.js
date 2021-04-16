@@ -6,13 +6,13 @@ const Schema = mongoose.Schema
 
 // Using Schema constructor, create userSchema
 const userSchema = new Schema({
+    _id: {
+        type: String
+    },
     email: {
         type: String,
-        required: true
-    },
-    password: {
-        type: String,
-        required: true
+        required: true,
+        unique: true,
     },
     firstName: {
         type: String,

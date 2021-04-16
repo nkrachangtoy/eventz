@@ -4,18 +4,15 @@ import  firebase  from "../../firebase/config"
 
 
 export default function Login() {
-    const [user, setUser] = useState(null)
     const [email, setEmail] = useState("email")
     const [password, setPassword] = useState("password")
     
-    const loginUser = async (email, password) => {
+    const handleUserLogin = async (e) => {
+      e.preventDefault()
         try {
           const data = await firebase.auth().signInWithEmailAndPassword(email, password)
-          console.log('user logged in')
-          console.log(data.user.uid)
         } catch (error) {
-          console.log(error)
-          console.log("error occured")
+          console.error('Incorrect email or password')
         }
     
       }
@@ -25,7 +22,7 @@ export default function Login() {
             <span className="login-text__header">Log In</span>
             <span className="login-text__subheader">Welcome, we missed you!</span>
           </div>
-          <form className="login-form">
+          <form className="login-form" onSubmit={handleUserLogin}>
             <label className="login-form__label" for="email">
               Email
             </label>
@@ -33,18 +30,18 @@ export default function Login() {
                 className="login-form__input"
                 type="text" 
                 name="email" 
-                value={email} 
-                onChange={(e)=> setEmail(e.target.value)}
+                placeholder="Email"
+                onChange={({target})=> setEmail(target.value)}
               />
             <label className="login-form__label" for="password">
               Password
             </label>
               <input 
                 className="login-form__input" 
-                type="text" 
+                type="password" 
                 name="password" 
-                value={password} 
-                onChange={(e)=> setPassword(e.target.value)}
+                placeholder="Password"
+                onChange={({target})=> setPassword(target.value)}
               />
               <div className="login-form__radio-wrapper">
                 <div>
@@ -55,7 +52,7 @@ export default function Login() {
                   <span className="login-form__text--forget-password">Forgot Password?</span>            
                 </Link>
               </div>
-            <button className="login-form__button" onClick={() => loginUser(email, password)}>Log in</button> 
+            <button className="login-form__button" type="submit">Log in</button> 
           </form>
           <div>
             <span>Not a member?</span>
