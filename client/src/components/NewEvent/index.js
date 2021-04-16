@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Link } from 'react-router-dom'
+import { createEvent } from '../../network/events'
+
 
 export default function NewEvent() {
     const [title, setTitle] = useState()
@@ -9,8 +11,7 @@ export default function NewEvent() {
 
     const handleCreateEvent = (e) => {
         e.preventDefault()
-
-        console.log(`submitted: ${title}, ${description}, ${location}, ${time}`)
+         createEvent(title,description,location,time)
     }
     return (
         <div>

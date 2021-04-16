@@ -17,7 +17,7 @@ admin.initializeApp({
 /**
  * Check the incoming request for bearer token
  */
-const decodeIDToken = async (req, res, next) => {
+async function decodeIDToken (req, res, next) {
     const header = req.headers?.authorization
     // If token exists we send it back to Firebase for verification
     if (header !== 'Bearer null' && req.headers?.authorization?.startsWith('Bearer')){
@@ -33,4 +33,18 @@ const decodeIDToken = async (req, res, next) => {
     next()
 }
 
+// async function verifyToken(){
+//     admin
+//         .auth()
+//         .verifyIdToken(idToken)
+//         .then((decodedToken)=>{
+//             const uid = decodedToken.uid
+//             return uid
+//         })
+//         .catch((error)=>{
+//             console.log(error)
+//         })
+// }
+
+// module.exports = verifyToken;
 module.exports = decodeIDToken;

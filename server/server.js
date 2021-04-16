@@ -7,6 +7,7 @@ const decodeIDToken = require('./utils/firebaseToken')
 
 //Defining database & router
 const eventsRoute = require('./routes/eventsRoute')
+const userRoute = require('./routes/userRoute')
 
 // dotenv config
 dotenv.config()
@@ -14,25 +15,26 @@ dotenv.config()
 // Express app
 const app = express()
 
-// CORS
-app.use(cors())
-
 // Connect to mongodb
 connectDB()
 
-// Firebase middleware
-// Will enable when dealing with auth
-app.use(decodeIDToken)
+// CORS
+app.use(cors())
 
 // Middlewares
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
+
+// Firebase middleware
+app.use(decodeIDToken)
+
 
 // Routes
 app.get('/', (req,res)=>{
   res.send('Hello from express')
 })
 app.use('/events', eventsRoute)
+app.use('/users', userRoute)
 
 
 // Listen
