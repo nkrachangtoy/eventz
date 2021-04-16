@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { DataGrid } from '@material-ui/data-grid';
 import { makeStyles } from "@material-ui/core/styles";
-import { Box } from "@material-ui/core";
+import { Box, Button } from "@material-ui/core";
 import { getEvents, postEvent } from '../../network/events'
 import axios from '../../network/axios'
 
@@ -51,6 +51,9 @@ export default function Events() {
       return (
       <div style={{ height: 300, width: '100%' }}>
           <Box>
+          <div class="d-flex justify-content-end">
+            <button type="button" class="btn btn-primary ">Create new event</button>
+          </div>
           <h1>Events</h1>
           </Box>
 
