@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import { makeStyles } from "@material-ui/core/styles";
-import { getEvents } from '../../network/events'
 import { Link } from 'react-router-dom'
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -12,6 +11,7 @@ import Paper from '@material-ui/core/Paper';
 import { Box, Button } from "@material-ui/core";
 import { getEvents, postEvent } from '../../network/events'
 import axios from '../../network/axios'
+
 
 
 
@@ -37,7 +37,7 @@ export default function Events() {
       <div style={{ height: 300, width: '80%', margin: '0 auto' }}>
           <Box>
           <div class="d-flex justify-content-end">
-            <button type="button" class="btn btn-primary ">Create new event</button>
+          <Link to="newEvent"><button type="button" class="btn btn-primary ">Create new event</button></Link>
           </div>
           <h1>Events</h1>
           </Box>
