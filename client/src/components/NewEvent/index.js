@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react"
 import { Link } from 'react-router-dom'
 import { createEvent } from '../../network/events'
+import { useHistory } from 'react-router-dom'
 
 
 export default function NewEvent() {
+    const history = useHistory()
     const [title, setTitle] = useState()
     const [description, setDescription] = useState()
     const [location, setLocation] = useState()
@@ -11,7 +13,12 @@ export default function NewEvent() {
 
     const handleCreateEvent = (e) => {
         e.preventDefault()
-         createEvent(title,description,location,time)
+        createEvent(title,description,location,time)
+        setTitle('')
+        setDescription('')
+        setLocation('')
+        setTime('')
+        history.push('/events')
     }
     return (
         <div>
