@@ -29,7 +29,6 @@ export const getEvents = async () => {
 
 export const createEvent = async (title, description, location, time) => {
     const header = await createToken()
-
     const payload = {
         title,
         description,
