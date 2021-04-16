@@ -15,6 +15,19 @@ module.exports.getAllEvent = async (req,res) => {
 }
 
 /**
+ * GET event by id
+ * @METHOD GET
+ */
+ module.exports.getEventById = async (_id) => {
+  try{
+    const event = await Event.findById(_id)
+    res.json(event)
+  }catch(err){
+    res.json({message: err})
+  }
+}
+
+/**
  * Create an event
  * @METHOD POST
  */

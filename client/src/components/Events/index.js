@@ -51,7 +51,7 @@ export default function Events() {
                 {events.map((row) => (
                   <TableRow key={row._id}>
                     <TableCell component="th" scope="row">
-                      {row.title}
+                      <Link to='/events/:id'>{row.title}</Link>
                     </TableCell>
                     <TableCell align="right">{row.description}</TableCell>
                     <TableCell align="right">{row.location}</TableCell>
