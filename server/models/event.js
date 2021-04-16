@@ -30,7 +30,11 @@ const eventSchema = new Schema({
     author: {
         type: Schema.Types.ObjectId,
         ref: "User",
-    }
+    },
+    members:[{
+        type: Schema.Types.ObjectId,
+        ref: "User",
+    }]
 })
 
 // Create Event Model

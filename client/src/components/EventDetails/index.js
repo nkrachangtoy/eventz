@@ -21,6 +21,7 @@ import { Avatar, Grid } from '@material-ui/core';
 //   } from "@material-ui/core";
 import {Typography } from "@material-ui/core"
 import { blueGrey } from "@material-ui/core/colors";
+import { useParams } from 'react-router-dom'
 
 
   const useStyles = makeStyles((theme)=>({
@@ -53,12 +54,14 @@ import { blueGrey } from "@material-ui/core/colors";
 export default function EventDetails() {
     const classes = useStyles()
 
+    const {id} = useParams()
+
     function FormRow1() {
       return (
         <React.Fragment>
           <Grid item xs={4}>
             <Typography gutterBottom variant="h5" component="h2" className="text-white">
-              Event Description
+              {id}
             </Typography>
             <Typography>
               A place where React Developpers can meet and share ideas.

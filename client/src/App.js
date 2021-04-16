@@ -58,7 +58,7 @@ console.log('logged in?', isLoggedIn)
           <Route path="/events">
             <Events></Events>
           </Route>
-          <Route path="/eventDetails">
+          <Route path="/events/:id">
             <EventDetails></EventDetails>
           </Route>
           <Route path="/">

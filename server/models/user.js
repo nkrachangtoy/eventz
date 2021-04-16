@@ -1,5 +1,6 @@
 // Require
 const mongoose = require('mongoose')
+const Event = require('./event')
 
 // Get the Schema constructor
 const Schema = mongoose.Schema
@@ -19,15 +20,19 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    event: {
+        type: Schema.Types.ObjectId,
+        ref: 'Event'
+    }
 })
 
-// userSchema.set('toJSON', {
-//     transform: (doc, returnedObject) => {
-//         returnedObject.id = returnedObject._id.toString()
-//         delete returnedObject._id
-//         delete returnedObject._v
-//     },
-// })
+    userSchema.set('toJSON', {
+        transform: (doc, returnedObject) => {
+            returnedObject.id = returnedObject._id.toString()
+            delete returnedObject._id
+            delete returnedObject._v
+        },
+    })
 
 // Create User Model
 const User = mongoose.model('User', userSchema)
