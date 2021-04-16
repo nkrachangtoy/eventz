@@ -1,15 +1,23 @@
 import React, { useState } from "react"
 import  firebase  from "../../firebase/config"
+import {Link, useHistory} from 'react-router-dom'
 import { registerUser } from "../../network/users"
+import Button from '@material-ui/core/Button';
 
 
 export default function Register() {
+    const history = useHistory()
     const [user, setUser] = useState({
       email: '',
       firstName: '',
       lastName: '',
       password: '',
     })
+    
+
+    const redirectLogin = async () => {
+      history.push("/login")
+      }
 
     const handleSubmit = async (e) => {
       e.preventDefault()
@@ -90,7 +98,9 @@ export default function Register() {
           </form>
           <div>
             <span>Already a member?</span>
-            <span>Signin here →</span>
+            <span>
+            <Button variant="outline-primary" onClick={() => redirectLogin()}>Sign In here →</Button>
+            </span>
           </div>
         </div>
       )

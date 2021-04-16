@@ -35,6 +35,9 @@ console.log('logged in?', isLoggedIn)
       ? (
         <>
         <Switch>
+          <Route path="/events">
+            <Events></Events>
+          </Route>
           <Route path="/login">
             <LoginPage></LoginPage>
           </Route>
@@ -42,7 +45,7 @@ console.log('logged in?', isLoggedIn)
             <RegisterPage></RegisterPage>
           </Route>
           <Route path="/">
-            <Events></Events>
+            <LoginPage></LoginPage>
           </Route>
         </Switch>
         </>

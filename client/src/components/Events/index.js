@@ -10,6 +10,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import { Box, Button } from "@material-ui/core";
+import { getEvents, postEvent } from '../../network/events'
+import axios from '../../network/axios'
 
 
 
@@ -34,6 +37,9 @@ export default function Events() {
       return (
       <div style={{ height: 300, width: '80%', margin: '0 auto' }}>
           <Box>
+          <div class="d-flex justify-content-end">
+            <button type="button" class="btn btn-primary ">Create new event</button>
+          </div>
           <h1>Events</h1>
           </Box>
           <TableContainer component={Paper}>
