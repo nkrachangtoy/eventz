@@ -23,10 +23,6 @@ export default function Login() {
         history.push("/register")
         }
 
-
-
-
-
       return (
         <div className="login-wrapper">
           <div className="login-header-wrapper">
