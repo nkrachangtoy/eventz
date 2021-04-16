@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Header from "./components/Header"
 import {BrowserRouter as Router, Switch, Route,} from "react-router-dom";
-// import  firebase  from "./firebase/config"
+import  firebase  from "./firebase/config"
 
 // IMPORT COMPONENTS
 import LoginPage from './layouts/LoginPage'
@@ -13,9 +13,15 @@ import EventDetails from "./components/EventDetails";
 // Style
 import './Styles/main.css'
 import { Container } from "@material-ui/core";
+import { filterGridStateSelector } from "@material-ui/data-grid";
 
 export default function App() {
-const [user, setUser] = useState(null)
+const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+// Check if user is logged in
+firebase.auth().onAuthStateChanged((user) => {
+  return user ? setIsLoggedIn(true) : setIsLoggedIn(false)
+})
 
 
   return (
