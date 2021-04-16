@@ -1,46 +1,22 @@
 import React, { useState, useEffect } from "react"
-import  firebase  from "../../firebase/config"
 import { DataGrid } from '@material-ui/data-grid';
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  Card,
-  CardContent,
-  Button,
-  TextField,
-  Typography,
-  Box
-} from "@material-ui/core";
-import {getEvents, postEvent} from '../../network/events'
+import { Box } from "@material-ui/core";
+import { getEvents, postEvent } from '../../network/events'
+import axios from '../../network/axios'
 
 
 const useStyles = makeStyles((theme)=>({
-  // root:{
-  //     maxWidth: "400px",
-  //     maxHeight: "464px",
-  //     padding: "48px 40px",
-  // },
-  // input: {
-  //   marginBottom: 10,
-  //   borderRadius: "50%"
-  // },
-  // inputForm: {
-  //   '& > *': {
-  //     margin: "24px 0"
-  //   },
-  // },
-  // title:{
-  //     marginLeft: 20,
-  // }
+
 }))
 
 
 export default function Events() {
   const classes = useStyles();
 
-
   //Static Data
   const rows = [
-              {
+            {
                 id: 1,
                 Event: 'React Vancouver',
                 Detail: 'Meetup for React Devs',
@@ -49,7 +25,7 @@ export default function Events() {
                 Time: '18:00',
                 Host: 'Jonathan',
                 Status: 'Open'
-              },
+            },
             {
               id: 2,
               Event: 'SQL Vancouver',
