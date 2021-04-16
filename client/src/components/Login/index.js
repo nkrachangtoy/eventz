@@ -1,11 +1,12 @@
 import React, { useState } from "react"
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 import  firebase  from "../../firebase/config"
 
 
 export default function Login() {
     const [email, setEmail] = useState("email")
     const [password, setPassword] = useState("password")
+    const history = useHistory()
     
     const handleUserLogin = async (e) => {
       e.preventDefault()
@@ -16,6 +17,22 @@ export default function Login() {
         }
     
       }
+
+      const redirectSignUp = async (e) => {
+        e.preventDefault()
+        history.push("/signUp")
+          // try {
+          //   const data = await firebase.auth().signInWithEmailAndPassword(email, password)
+          // } catch (error) {
+          //   console.error('Incorrect email or password')
+          // }
+      
+        }
+
+
+
+
+
       return (
         <div className="login-wrapper">
           <div className="login-header-wrapper">
@@ -56,7 +73,9 @@ export default function Login() {
           </form>
           <div>
             <span>Not a member?</span>
-            <span>Signup here →</span>
+            <span>Signup here →
+            <Button variant="outline-primary" onClick={() => redirectSignUp()}>Login</Button>
+            </span>
           </div>
         </div>
       )
