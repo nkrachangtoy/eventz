@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react"
+import React, { useState, useEffect } from "react"
 import  firebase  from "../../firebase/config"
 import { DataGrid } from '@material-ui/data-grid';
 import { makeStyles } from "@material-ui/core/styles";
@@ -10,6 +10,7 @@ import {
   Typography,
   Box
 } from "@material-ui/core";
+import {getEvents, postEvent} from '../../network/events'
 
 
 const useStyles = makeStyles((theme)=>({
@@ -35,6 +36,7 @@ const useStyles = makeStyles((theme)=>({
 
 export default function Events() {
   const classes = useStyles();
+
 
   //Static Data
   const rows = [
