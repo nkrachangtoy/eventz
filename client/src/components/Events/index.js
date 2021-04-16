@@ -53,7 +53,7 @@ export default function Events() {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {events.map((row) => (
+                {/* {events.map((row) => (
                   <TableRow key={row._id}>
                     <TableCell component="th" scope="row">
                       <Link to='/events/:id'>{row.title}</Link>
@@ -63,7 +63,7 @@ export default function Events() {
                     <TableCell align="right">{row.time}</TableCell>
                     <TableCell align="right"><Link>Join</Link></TableCell>
                   </TableRow>
-                ))}
+                ))} */}
               </TableBody>
             </Table>
           </TableContainer>
