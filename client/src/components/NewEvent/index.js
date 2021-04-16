@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Link } from 'react-router-dom'
 import { createEvent } from '../../network/events'
 import { makeStyles } from '@material-ui/core/styles';
+import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom'
 import { TextField } from "@material-ui/core";
 
@@ -44,6 +45,7 @@ export default function NewEvent() {
                     label="Title"
                     multiline
                     rowsMax={4}
+                    onChange={({target})=> setTitle(target.value)}
                     variant="outlined"
                     />
                     <TextField
@@ -51,6 +53,7 @@ export default function NewEvent() {
                     label="Description"
                     multiline
                     rowsMax={4}
+                    onChange={({target})=> setDescription(target.value)}
                     variant="outlined"
                     />
                     <TextField
@@ -58,6 +61,7 @@ export default function NewEvent() {
                     label="Location"
                     multiline
                     rowsMax={4}
+                    onChange={({target})=> setLocation(target.value)}
                     variant="outlined"
                     />
                     <TextField
@@ -65,8 +69,11 @@ export default function NewEvent() {
                     label="Duration"
                     multiline
                     rowsMax={4}
+                    onChange={({target})=> setTime(target.value)}
                     variant="outlined"
                     />
+                    <br />
+                    <button class=" m-4 btn btn-dark" type="submit">Create Event</button>
                 </div>
             </form>
 
