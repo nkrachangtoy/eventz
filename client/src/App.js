@@ -29,28 +29,43 @@ console.log('logged in?', isLoggedIn)
   return (
   <Container class="bg-secondary" maxWidth="lg" maxHeight="300">
   <Router class="bg-dark">
-    <Header class="bg-dark"></Header>
+    <Header class="bg-dark" isLoggedIn={isLoggedIn}></Header>
     <main style={{marginTop: 100}}>
-    <Switch>
-      <Route path="/login">
-        <LoginPage></LoginPage>
-      </Route>
-      <Route path="/register">
-        <RegisterPage></RegisterPage>
-      </Route>
-      <Route path="/newEvent">
-        <NewEvent></NewEvent>
-      </Route>
-      <Route path="/events">
-        <Events></Events>
-      </Route>
-      <Route path="/eventDetails">
-        <EventDetails></EventDetails>
-      </Route>
-      <Route path="/">
-        <Events></Events>
-      </Route>
-    </Switch>
+      {!isLoggedIn
+      ? (
+        <>
+        <Switch>
+          <Route path="/login">
+            <LoginPage></LoginPage>
+          </Route>
+          <Route path="/register">
+            <RegisterPage></RegisterPage>
+          </Route>
+          <Route path="/">
+            <Events></Events>
+          </Route>
+        </Switch>
+        </>
+      ) : (
+        <>
+        <Switch>
+          <Route path="/newEvent">
+            <NewEvent></NewEvent>
+          </Route>
+          <Route path="/events">
+            <Events></Events>
+          </Route>
+          <Route path="/eventDetails">
+            <EventDetails></EventDetails>
+          </Route>
+          <Route path="/">
+            <Events></Events>
+          </Route>
+        </Switch>
+        </>
+      )
+      }
+    
     </main>
   </Router>
   </Container>

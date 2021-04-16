@@ -1,12 +1,48 @@
-import React, { useState, useEffect, useContext } from "react"
-import  firebase  from "../../firebase/config"
-
+import React, { useState, useEffect } from "react"
+import { Link } from 'react-router-dom'
 
 export default function NewEvent() {
-    
+    const [title, setTitle] = useState()
+    const [description, setDescription] = useState()
+    const [location, setLocation] = useState()
+    const [time, setTime] = useState()
+
+    const handleCreateEvent = (e) => {
+        e.preventDefault()
+
+        console.log(`submitted: ${title}, ${description}, ${location}, ${time}`)
+    }
     return (
         <div>
-            <h1>New Events Page</h1>
+            <Link to="/events">View all events</Link>
+            <h2>Create new event</h2>
+            <form onSubmit={handleCreateEvent}>
+                <input 
+                    type="text"
+                    placeholder="Title"
+                    onChange={({target})=> setTitle(target.value)}
+                />
+                <br />
+                <input 
+                    type="text"
+                    placeholder="Description"
+                    onChange={({target})=> setDescription(target.value)}
+                />
+                <br />
+                <input 
+                    type="text"
+                    placeholder="Location"
+                    onChange={({target})=> setLocation(target.value)}
+                />
+                <br />
+                <input 
+                    type="text"
+                    placeholder="Duration"
+                    onChange={({target})=> setTime(target.value)}
+                />
+                <br />
+                <button type="submit">Create Event</button>
+            </form>
         </div>  
     )
 }
