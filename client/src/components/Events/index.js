@@ -1,9 +1,19 @@
 import React, { useState, useEffect } from "react"
-import { DataGrid } from '@material-ui/data-grid';
 import { makeStyles } from "@material-ui/core/styles";
+import { Box } from "@material-ui/core";
+import { getEvents } from '../../network/events'
+import { Link } from 'react-router-dom'
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 import { Box, Button } from "@material-ui/core";
 import { getEvents, postEvent } from '../../network/events'
 import axios from '../../network/axios'
+
 
 
 const useStyles = makeStyles((theme)=>({
@@ -13,54 +23,54 @@ const useStyles = makeStyles((theme)=>({
 
 export default function Events() {
   const classes = useStyles();
+  const [events, setEvents] = useState([])
 
-  //Static Data
-  const rows = [
-            {
-                id: 1,
-                Event: 'React Vancouver',
-                Detail: 'Meetup for React Devs',
-                Location: 'Downtown',
-                Date: '2021-04-10',
-                Time: '18:00',
-                Host: 'Jonathan',
-                Status: 'Open'
-            },
-            {
-              id: 2,
-              Event: 'SQL Vancouver',
-              Detail: 'Meetup for SQL Devs',
-              Location: 'Downtown',
-              Date: '2021-04-10',
-              Time: '18:00',
-              Host: 'Jonathan',
-              Status: 'Open'
-            },
-            {
-            id: 3,
-            Event: 'Mongo Vancouver',
-            Detail: 'Meetup for Mongo Devs',
-            Location: 'Downtown',
-            Date: '2021-04-10',
-            Time: '18:00',
-            Host: 'Jonathan',
-            Status: 'Open'
-          }
-  ]
-    
+  useEffect(() => {
+    const fetchEvents = async () => {
+      const fetchedEvents = await getEvents()
+      setEvents(fetchedEvents)
+    }
+    fetchEvents()
+  }, [])
+
+
       return (
-      <div style={{ height: 300, width: '100%' }}>
+      <div style={{ height: 300, width: '80%', margin: '0 auto' }}>
           <Box>
           <div class="d-flex justify-content-end">
             <button type="button" class="btn btn-primary ">Create new event</button>
           </div>
           <h1>Events</h1>
           </Box>
+          <TableContainer component={Paper}>
+            <Table className={classes.table} aria-label="caption table">
+              <TableHead>
+                <TableRow>
+                  <TableCell>Title</TableCell>
+                  <TableCell align="right">Description</TableCell>
+                  <TableCell align="right">Location</TableCell>
+                  <TableCell align="right">Duration</TableCell>
+                  <TableCell align="right">Status</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {events.map((row) => (
+                  <TableRow key={row._id}>
+                    <TableCell component="th" scope="row">
+                      {row.title}
+                    </TableCell>
+                    <TableCell align="right">{row.description}</TableCell>
+                    <TableCell align="right">{row.location}</TableCell>
+                    <TableCell align="right">{row.time}</TableCell>
+                    <TableCell align="right"><Link>Join</Link></TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
 
-          <DataGrid
-            columns={[{ field: 'Event' , flex: 1}, { field: 'Detail' , flex: 1}, { field: 'Location', flex: 1}, { field: 'Date' ,type: 'date', flex: 1}, { field: 'Time', type: 'Time', flex: 0.5}, { field: 'Host' }, { field: 'Status' , flex: 1} ]}
-            rows={rows}
-          />
+          
+
       </div>
       )
 }
