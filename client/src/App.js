@@ -23,6 +23,8 @@ firebase.auth().onAuthStateChanged((user) => {
   return user ? setIsLoggedIn(true) : setIsLoggedIn(false)
 })
 
+console.log('logged in?', isLoggedIn)
+
 
   return (
   <Container class="bg-secondary" maxWidth="lg" maxHeight="300">
