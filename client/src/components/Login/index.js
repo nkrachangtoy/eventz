@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import {Link, useHistory} from 'react-router-dom'
 import  firebase  from "../../firebase/config"
+import Button from '@material-ui/core/Button';
 
 
 export default function Login() {
@@ -19,14 +20,7 @@ export default function Login() {
       }
 
       const redirectSignUp = async (e) => {
-        e.preventDefault()
-        history.push("/signUp")
-          // try {
-          //   const data = await firebase.auth().signInWithEmailAndPassword(email, password)
-          // } catch (error) {
-          //   console.error('Incorrect email or password')
-          // }
-      
+        history.push("/register")
         }
 
 
@@ -73,8 +67,8 @@ export default function Login() {
           </form>
           <div>
             <span>Not a member?</span>
-            <span>Signup here →
-            <Button variant="outline-primary" onClick={() => redirectSignUp()}>Login</Button>
+            <span>
+            <Button variant="outline-primary" onClick={() => redirectSignUp()}>Signup here →</Button>
             </span>
           </div>
         </div>
