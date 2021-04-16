@@ -17,34 +17,21 @@ admin.initializeApp({
 /**
  * Check the incoming request for bearer token
  */
-async function decodeIDToken (req, res, next) {
-    const header = req.headers?.authorization
-    // If token exists we send it back to Firebase for verification
-    if (header !== 'Bearer null' && req.headers?.authorization?.startsWith('Bearer')){
-        const idToken = req.headers.authorization.split('Bearer')[1]
-        // If verified we put it onto the request
-        try{
-            const decodedToken = await admin.auth().verifyIdToken(idToken)
-            req['currentUser'] = decodedToken
-        }catch(err){
-            console.log(err)
-        }
+ async function decodeIDToken(req, res, next) {
+    const header = req.headers?.authorization;
+    if (header !== 'Bearer null' && req.headers?.authorization?.startsWith('Bearer ')) {
+  
+      const idToken = req.headers.authorization.split('Bearer ')[1];
+  
+      try {
+        const decodedToken = await admin.auth().verifyIdToken(idToken);
+        req['currentUser'] = decodedToken;
+      } catch (err) {
+        console.log(err);
+      }
     }
-    next()
-}
+  
+    next();
+  }
 
-// async function verifyToken(){
-//     admin
-//         .auth()
-//         .verifyIdToken(idToken)
-//         .then((decodedToken)=>{
-//             const uid = decodedToken.uid
-//             return uid
-//         })
-//         .catch((error)=>{
-//             console.log(error)
-//         })
-// }
-
-// module.exports = verifyToken;
 module.exports = decodeIDToken;

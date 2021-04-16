@@ -18,13 +18,10 @@ module.exports.getAllEvent = async (req,res) => {
  * GET event by id
  * @METHOD GET
  */
- module.exports.getEventById = async (_id) => {
-  try{
-    const event = await Event.findById(_id)
-    res.json(event)
-  }catch(err){
-    res.json({message: err})
-  }
+ module.exports.getEventById = async (req, res) => {
+   const { id } = req.params
+   const event = await Event.findById(id)
+   res.send({event})
 }
 
 /**
@@ -33,6 +30,8 @@ module.exports.getAllEvent = async (req,res) => {
  */
  module.exports.createEvent = async (req,res) => {
     const {title, description, location, time} = req.body
+    const auth = await req.currentUser
+    console.log('AUTH INFO', auth)
 
     // Create new event
     const event = new Event({

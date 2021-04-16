@@ -7,7 +7,10 @@ const User = require('../models/user')
  * @METHOD POST
  */
 module.exports.registerUser = async (req,res) => {
-    const {_id, email, firstName, lastName, password} = req.body
+    const {email, firstName, lastName, password} = req.body
+    // const auth = req.currentUser
+    // const userId = auth.user_id
+    // console.log(userId)
     // Create new User
     const user = new User({
       email,
