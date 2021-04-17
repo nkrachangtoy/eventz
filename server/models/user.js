@@ -20,10 +20,10 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    event: {
+    event: [{
         type: Schema.Types.ObjectId,
         ref: 'Event'
-    }
+    }]
 })
 
     userSchema.set('toJSON', {
