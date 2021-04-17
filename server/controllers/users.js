@@ -8,9 +8,9 @@ const User = require('../models/user')
  */
 module.exports.registerUser = async (req,res) => {
     const {email, firstName, lastName, password} = req.body
-    // const auth = req.currentUser
-    // const userId = auth.user_id
-    // console.log(userId)
+    const auth = req.currentUser
+    const userId = auth.user_id
+    console.log(userId)
     // Create new User
     const user = new User({
       email,
@@ -26,3 +26,26 @@ module.exports.registerUser = async (req,res) => {
   }
     
 }
+
+
+/**
+ * UPDATE When user when join an event
+ * @METHOD PATCH
+ */
+//  module.exports.updateUserEvent = async (req,res) => {
+//   const auth = req.currentUser
+//   const userId = auth.user_id
+//   console.log(userId)
+//   try{
+//     // Find User by id
+//     const user = await User.findById(userId)
+    
+//     // Update by id
+//     await User.findByIdAndUpdate(user._id, {
+//       events: [_id]
+//     })
+//   }catch(err){
+//   res.json({message: err})
+//   }
+  
+// }
