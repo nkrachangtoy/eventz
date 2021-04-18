@@ -14,7 +14,7 @@ const createToken = async () => {
     return payloadHeader
 }
 
-const URL = 'http://localhost:8080/users'
+const URL = 'https://the-eventz.herokuapp.com/api/users'
 
 /**
  * Register new user in database
