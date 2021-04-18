@@ -10,7 +10,8 @@ const dbURI = process.env.URI
 module.exports.connectDB = async () => {
     await mongoose.connect(dbURI, {
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useCreateIndex: true
     })
     .then(res => console.log('Connected to Mongodb'))
     .catch(err => console.log(err))
