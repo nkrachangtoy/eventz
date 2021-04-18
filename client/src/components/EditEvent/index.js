@@ -7,3 +7,12 @@ export default function EditEvent() {
         </div>
     )
 }
+import React from 'react'
+
+export default function EditEvent() {
+    return (
+        <div>
+            
+        </div>
+    )
+}

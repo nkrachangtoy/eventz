@@ -14,6 +14,7 @@ import EventDetails from "./components/EventDetails";
 import './Styles/main.css'
 import { Container } from "@material-ui/core";
 import { filterGridStateSelector } from "@material-ui/data-grid";
+import EditEvent from "./components/EditEvent";
 
 export default function App() {
 const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -60,6 +61,9 @@ console.log('logged in?', isLoggedIn)
           </Route>
           <Route path="/events/:id">
             <EventDetails></EventDetails>
+          </Route>
+          <Route path="/editEvent">
+            <EditEvent></EditEvent>
           </Route>
           <Route path="/">
             <Events></Events>
