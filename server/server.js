@@ -33,8 +33,8 @@ app.use(decodeIDToken)
 app.get('/', (req,res)=>{
   res.send('Hello from express')
 })
-app.use('/events', eventsRoute)
-app.use('/users', userRoute)
+app.use('/api/events', eventsRoute)
+app.use('/api/users', userRoute)
 
 
 // Listen
