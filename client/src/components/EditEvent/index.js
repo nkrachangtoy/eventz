@@ -40,45 +40,19 @@ export default function EditEvent() {
             <h2>Event Details</h2>
 
             <form onSubmit={handleEditEvent} className={classes.root} noValidate autoComplete="off">
-            <h3></h3>   
                
-               
-                <div>
-                    <TextField
-                    id="outlined-multiline-flexible"
-                    label="Title"
-                    multiline
-                    rowsMax={4}
-                    onChange={({target})=> setTitle(target.value)}
-                    variant="outlined"
-                    />
-                    <TextField
-                    id="outlined-multiline-flexible"
-                    label="Description"
-                    multiline
-                    rowsMax={4}
-                    onChange={({target})=> setDescription(target.value)}
-                    variant="outlined"
-                    />
-                    <TextField
-                    id="outlined-multiline-flexible"
-                    label="Location"
-                    multiline
-                    rowsMax={4}
-                    onChange={({target})=> setLocation(target.value)}
-                    variant="outlined"
-                    />
-                    <TextField
-                    id="outlined-multiline-flexible"
-                    label="Duration"
-                    multiline
-                    rowsMax={4}
-                    onChange={({target})=> setTime(target.value)}
-                    variant="outlined"
-                    />
-                    <br />
-                    <button class=" m-4 btn btn-dark" type="submit">Create Event</button>
+            {/* <div class="row">
+                <div class="col">
+                <input type="text" class="form-control" placeholder="First name">
                 </div>
+                <div class="col">
+                <input type="text" class="form-control" placeholder="Last name">
+                </div>
+            </div> */}
+               
+
+
+
             </form>
         </div>
     )
