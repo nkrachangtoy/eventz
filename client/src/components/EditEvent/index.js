@@ -35,7 +35,14 @@ export default function EditEvent() {
 
     return (
         <div>
+            <Link to="/events"><h3> EDIT EVENT</h3></Link>
+            <br></br>
+            <h2>Event Details</h2>
+
             <form onSubmit={handleEditEvent} className={classes.root} noValidate autoComplete="off">
+            <h3></h3>   
+               
+               
                 <div>
                     <TextField
                     id="outlined-multiline-flexible"
