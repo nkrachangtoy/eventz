@@ -8,12 +8,15 @@ const dotenv = require('dotenv')
 // Config
 dotenv.config()
 
+const firebase_private_key_b64 = Buffer.from(process.env.FIREBASE_PRIVATE_KEY_ID, 'base64')
+const firebase_private_key = firebase_private_key_b64.toString('utf8')
+
 // Initialize Firebase on Backend
 admin.initializeApp({
     credential: admin.credential.cert({
       "type": process.env.FIREBASE_TYPE,
       "project_id": process.env.FIREBASE_PROJECT_ID,
-      "private_key_id": process.env.FIREBASE_PRIVATE_KEY_ID,
+      "private_key_id": firebase_private_key,
       "private_key": process.env.FIREBASE_PRIVATE_KEY,
       "client_email": process.env.FIREBASE_CLIENT_EMAIL,
       "client_id": process.env.FIREBASE_CLIENT_ID,
