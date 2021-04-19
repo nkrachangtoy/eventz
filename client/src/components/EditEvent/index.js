@@ -39,26 +39,25 @@ export default function EditEvent() {
             <br></br>
             <h2>Event Details</h2>
 
-            {/* <form onSubmit={handleEditEvent} className={classes.root} noValidate autoComplete="off"> */}
+    <form onSubmit={handleEditEvent} className={classes.root} noValidate autoComplete="off">
     <div class="form-row">
         <div class="col">
             <div class="form-row">
                 <div class="form-group col">
                 <label for="inputEmail4">Event Name</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email"></input>
+                <input class="form-control" placeholder="Event Name" onChange={({target})=> setTitle(target.value)}></input>
                 </div>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" placeholder="Event Description" id="exampleFormControlTextarea1" rows="3" onChange={({target})=> setDescription(target.value)}></textarea>
             </div>
             <div class="form-row">
                 <div class="form-group col">
-                <label for="inputEmail4">Event Name</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email"></input>
+                <label for="inputEmail4">Location</label>
+                <input type="email" class="form-control" placeholder="Location" onChange={({target})=> setLocation(target.value)}></input>
                 </div>
             </div>
-   
         </div>
 
     <div class="col">
@@ -104,6 +103,7 @@ export default function EditEvent() {
         </div>     
     </div>
 
+</form>
 </div>      
     )
 }
