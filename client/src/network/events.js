@@ -15,7 +15,7 @@ const createToken = async () => {
     return payloadHeader
 }
 
-const URL = 'http://localhost:8080/events'
+const URL = 'https://the-eventz.herokuapp.com/api/events'
 
 export const getEvents = async () => {
     const header = await createToken()
