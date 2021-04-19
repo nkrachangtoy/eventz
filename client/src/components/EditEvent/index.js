@@ -39,7 +39,7 @@ export default function EditEvent() {
             <br></br>
             <h2>Event Details</h2>
 
-            <form onSubmit={handleEditEvent} className={classes.root} noValidate autoComplete="off">
+            {/* <form onSubmit={handleEditEvent} className={classes.root} noValidate autoComplete="off"> */}
                
             {/* <div class="row">
                 <div class="col">
@@ -51,6 +51,10 @@ export default function EditEvent() {
             </div> */}
 
 
+
+    <div class="row">
+        <div class="col">test</div>    
+    <div class="col">
         <div class="form-row">
             <div class="form-group col-md-6">
             <label for="inputEmail4">Email</label>
@@ -94,11 +98,13 @@ export default function EditEvent() {
             </label>
             </div>
         </div>
-               
+    </div>
+        
 
 
-
-            </form>
+{/* 
+            </form> */}
         </div>
+        
     )
 }
