@@ -41,4 +41,4 @@ An app where users can post meetup events where the users can 'like', 'join'. Us
 
 ## Milestone 5
 
-- [ ] Deploy front-end/back-end (heroku?)
+- [ ] Deploy front-end/back-end
