@@ -11,7 +11,7 @@ An app where users can post meetup events where the users can 'like', 'join'. Us
 
 ## Milestone 1
 
-- [x] Authentication (Login/Register/Logout) with Firebase
+- [ ] Authentication (Login/Register/Logout) with Firebase
 - [ ] Implement Event List Screen with static data
 - [ ] UI with basic styling(only for testing):
   1. Login/Register Screen with Logout Button
