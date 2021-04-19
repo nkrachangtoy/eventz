@@ -40,71 +40,70 @@ export default function EditEvent() {
             <h2>Event Details</h2>
 
             {/* <form onSubmit={handleEditEvent} className={classes.root} noValidate autoComplete="off"> */}
-               
-            {/* <div class="row">
-                <div class="col">
-                <input type="text" class="form-control" placeholder="First name">
+    <div class="form-row">
+        <div class="col">
+            <div class="form-row">
+                <div class="form-group col">
+                <label for="inputEmail4">Event Name</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Email"></input>
                 </div>
-                <div class="col">
-                <input type="text" class="form-control" placeholder="Last name">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                <label for="inputEmail4">Event Name</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Email"></input>
                 </div>
-            </div> */}
+            </div>
+   
+        </div>
 
-
-
-    <div class="row">
-        <div class="col">test</div>    
     <div class="col">
         <div class="form-row">
-            <div class="form-group col-md-6">
-            <label for="inputEmail4">Email</label>
-            <input type="email" class="form-control" id="inputEmail4" placeholder="Email"></input>
+                <div class="form-group col">
+                    <label for="inputState">Duration</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>Duration</option>
+                        <option>30MIN</option>
+                        <option>1HR</option>
+                        <option>2HR</option>
+                        <option>3HR</option>
+                        <option>4HR</option>
+                    </select>
+                </div>
             </div>
-            <div class="form-group col-md-6">
-            <label for="inputPassword4">Password</label>
-            <input type="password" class="form-control" id="inputPassword4" placeholder="Password"></input>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"></input>
-        </div>
-        <div class="form-group">
-            <label for="inputAddress2">Address 2</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"></input>
-        </div>
+        </div>    
+
+    <div class="col">
         <div class="form-row">
-            <div class="form-group col-md-6">
-            <label for="inputCity">City</label>
-            <input type="text" class="form-control" id="inputCity"></input>
+                <div class="form-group col">
+                    <label for="inputState">Start Time</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>Time</option>
+                        <option>8AM</option>
+                        <option>9AM</option>
+                        <option>10AM</option>
+                        <option>11AM</option>
+                        <option>12PM</option>
+                        <option>1PM</option>
+                        <option>2PM</option>
+                        <option>3PM</option>
+                        <option>4PM</option>
+                        <option>5PM</option>
+                        <option>6PM</option>
+                        <option>7PM</option>
+                        <option>8PM</option>
+                        <option>9PM</option>
+                        <option>10PM</option>
+                    </select>
+                </div>
             </div>
-            <div class="form-group col-md-4">
-            <label for="inputState">State</label>
-            <select id="inputState" class="form-control">
-                <option selected>Choose...</option>
-                <option>...</option>
-            </select>
-            </div>
-            <div class="form-group col-md-2">
-            <label for="inputZip">Zip</label>
-            <input type="text" class="form-control" id="inputZip"></input>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck"></input>
-            <label class="form-check-label" for="gridCheck">
-                Check me out
-            </label>
-            </div>
-        </div>
+        </div>     
     </div>
-        
 
-
-{/* 
-            </form> */}
-        </div>
-        
+</div>      
     )
 }
