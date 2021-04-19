@@ -102,7 +102,8 @@ export default function EditEvent() {
             </div>
         </div>     
     </div>
-
+    <br />
+    <button class="ml-2 mb-4 btn btn-dark" type="submit">Edit Event</button>
 </form>
 </div>      
     )
