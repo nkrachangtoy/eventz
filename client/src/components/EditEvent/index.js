@@ -22,6 +22,7 @@ export default function EditEvent() {
     const [description, setDescription] = useState()
     const [location, setLocation] = useState()
     const [time, setTime] = useState()
+    const [duration, setDuration] = useState()
 
     const handleEditEvent = (e) => {
         e.preventDefault()
@@ -64,13 +65,13 @@ export default function EditEvent() {
         <div class="form-row">
                 <div class="form-group col">
                     <label for="inputState">Duration</label>
-                    <select id="inputState" class="form-control">
+                    <select id="inputState" class="form-control" onChange={({target})=> setDuration(target.value)}>
                         <option selected>Duration</option>
-                        <option>30MIN</option>
-                        <option>1HR</option>
-                        <option>2HR</option>
-                        <option>3HR</option>
-                        <option>4HR</option>
+                        <option value="0.5">30MIN</option>
+                        <option value="1">1HR</option>
+                        <option value="2">2HR</option>
+                        <option value="3">3HR</option>
+                        <option value="4">4HR</option>
                     </select>
                 </div>
             </div>
@@ -80,23 +81,23 @@ export default function EditEvent() {
         <div class="form-row">
                 <div class="form-group col">
                     <label for="inputState">Start Time</label>
-                    <select id="inputState" class="form-control">
+                    <select id="inputState" class="form-control"  onChange={({target})=> setTime(target.value)}>
                         <option selected>Time</option>
-                        <option>8AM</option>
-                        <option>9AM</option>
-                        <option>10AM</option>
-                        <option>11AM</option>
-                        <option>12PM</option>
-                        <option>1PM</option>
-                        <option>2PM</option>
-                        <option>3PM</option>
-                        <option>4PM</option>
-                        <option>5PM</option>
-                        <option>6PM</option>
-                        <option>7PM</option>
-                        <option>8PM</option>
-                        <option>9PM</option>
-                        <option>10PM</option>
+                        <option value="8">8AM</option>
+                        <option value="9">9AM</option>
+                        <option value="10">10AM</option>
+                        <option value="11">11AM</option>
+                        <option value="12">12PM</option>
+                        <option value="13">1PM</option>
+                        <option value="14">2PM</option>
+                        <option value="15">3PM</option>
+                        <option value="16">4PM</option>
+                        <option value="17">5PM</option>
+                        <option value="18">6PM</option>
+                        <option value="19">7PM</option>
+                        <option value="20">8PM</option>
+                        <option value="21">9PM</option>
+                        <option value="22">10PM</option>
                     </select>
                 </div>
             </div>
