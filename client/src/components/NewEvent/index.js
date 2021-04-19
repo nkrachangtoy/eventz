@@ -76,34 +76,6 @@ export default function NewEvent() {
                     <button class=" m-4 btn btn-dark" type="submit">Create Event</button>
                 </div>
             </form>
-
-            {/* <form onSubmit={handleCreateEvent}>
-                <input 
-                    type="text"
-                    placeholder="Title"
-                    onChange={({target})=> setTitle(target.value)}
-                />
-                <br />
-                <input 
-                    type="text"
-                    placeholder="Description"
-                    onChange={({target})=> setDescription(target.value)}
-                />
-                <br />
-                <input 
-                    type="text"
-                    placeholder="Location"
-                    onChange={({target})=> setLocation(target.value)}
-                />
-                <br />
-                <input 
-                    type="text"
-                    placeholder="Duration"
-                    onChange={({target})=> setTime(target.value)}
-                />
-                <br />
-                <button type="submit">Create Event</button>
-            </form> */}
         </div>  
     )
 }
