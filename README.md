@@ -6,12 +6,15 @@ An app where users can post meetup events where the users can 'like', 'join'. Us
   1. Cd into desired directory and type "git clone "this repo url""
   2. Type "npm install" in the same directory
   3. Create a .env file under the server directory and paste the following code into it:
+  
     // MongoDb
     URI=mongodb+srv://dbUserAdmin:dbUserPassword@cluster0.2lzcv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
     // Google_application_credentials
     GOOGLE_APPLICATION_CREDENTIALS="./serviceAccount.json"
     DATABASE_NAME=eventz-website-default-rtdb
+    
   4. Create a serviceAccount.json file under the server directory and paste the following code into it:
+  5. 
 {
   "type": "service_account",
   "project_id": "eventz-website",
